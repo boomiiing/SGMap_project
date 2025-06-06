@@ -1,12 +1,20 @@
 <template>
-  <div id="mapBox" ref="mapBox" style="width: 100%;height: 100vh;;"></div>
+  <div id="mapBox" ref="mapBox" class="map_box">
+    qwedasd
+    <MapTools class="tools_box"></MapTools>
+  </div>
 </template>
   
   <script>
+import SGMapObj from "@/commonjs/SGMapObj";
+import MapTools from "@/components/mapTools";
 export default {
   name: "SGMapModel",
-  components: {},
-  created() {
+  components: {
+    MapTools,
+  },
+  created() {},
+  mounted() {
     this.initMap();
   },
   data() {
@@ -16,27 +24,22 @@ export default {
   },
   methods: {
     initMap() {
-      window.SGMap.tokenTask
-        .login("key", "secret")
-        .then(() => {
-         this.map = new window.SGMap.Map({
-            // 地图绑定的DOM元素ID
-            container: this.$refs.mapBox,
-            // 地图样式
-            style: "aegis://styles/aegis/Streets-v2",
-            // 默认缩放层级
-            zoom: 11,
-            // 地图中心点
-            center: [118.3, 26.1],
-            // 地图默认字体
-            localIdeographFontFamily: "Microsoft YaHei Regular",
-          });
-        });
+      SGMapObj.createMapObj(this.$refs.mapBox);
     },
   },
 };
 </script>
   
-  <style>
+<style scoped lang="scss">
+.map_box {
+  width: 100%;
+  height: 100vh;
+  .toolsBox {
+    position: absolute;
+    left: 0;
+    top:0;
+    z-index: 1000;
+  }
+}
 </style>
   

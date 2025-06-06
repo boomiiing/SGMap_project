@@ -1,29 +1,24 @@
 <template>
-    <div>
-        <SGMapModel></SGMapModel>
-    </div>
-  </template>
+  <div>
+    <SGMapModel></SGMapModel>
+  </div>
+</template>
   
-  <script>
-  
-import SGMapModel from '../../components/SGMapModel/index.vue'
+<script>
+import SGMapModel from "../../components/SGMapModel/index.vue";
 
-  export default {
-    name: "CableView",
-    components: {
-        SGMapModel
-    },
-    data() {
-      return {
-    
-      };
-    },
-    methods: {
-  
-    },
-  };
-  </script>
+export default {
+  name: "CableView",
+  components: {
+    SGMapModel,
+  },
+  data() {
+    return {};
+  },
+  methods: {},
+};
+</script>
   
   <style>
-  </style>
+</style>
   
